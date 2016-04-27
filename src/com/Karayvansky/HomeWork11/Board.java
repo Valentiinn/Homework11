@@ -11,7 +11,7 @@ public class Board {
 		for (int i = 0; i < 3; i++) {
 			Arrays.fill(board[i], '|');
 		}
-		currentPlayer = 'X';
+		currentPlayer = 'O';
 	}
 
 	public void printBoard() {
@@ -29,6 +29,8 @@ public class Board {
 
 	}
 
+	// если currentplayer будет равен "X" elem = O
+	// ≈сли currentPlayer будет не "X", то elem будет равен "X"
 	public boolean gameFinished() {
 		char elem = (currentPlayer == 'X') ? 'O' : 'X';
 		for (int i = 0; i < 3; i++) {
@@ -74,8 +76,8 @@ public class Board {
 
 	public void calculateWinner() {
 		if (gameFinished()) {
-			char elem = (currentPlayer == 'X') ? 'O' : 'X';
-			System.out.println("The winner is " + elem + " !!!");
+			char winner = (currentPlayer == 'X') ? 'O' : 'X';
+			System.out.println("The winner is " + winner + " !!!");
 		}
 	}
 
